@@ -1,0 +1,156 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: magenta;
+    padding: 10px 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left img{
+    margin-right: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: 20px;
+}
+
+
+.movies {
+    display: flex;
+    gap: 20px; /* Add spacing between movie cards */
+    justify-content: center; /* Center the movie cards */
+    flex-wrap: wrap; /* Wrap to the next line if necessary */
+}
+
+.movie {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px; /* Fixed width for portrait layout */
+}
+
+.movie img {
+    width: 100%;
+    height: 300px; /* Fixed height for image preview */
+    object-fit: cover; /* Maintain aspect ratio, crop if necessary */
+    border-bottom: 1px solid #ddd; /* Separate image from text */
+}
+
+.movie-info {
+    padding: 10px;
+}
+
+.movie-info h2 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.movie-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-top: 10px;
+}
+
+.modal-content input {
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: magenta;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: rgb(100,0,100);
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Visible modal */
+.modal:not(.hidden) {
+    display: block;
+}
