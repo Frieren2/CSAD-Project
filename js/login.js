@@ -1,11 +1,10 @@
-document.getElementById("signup").addEventListener("submit", (event)=>{
+document.getElementById("login").addEventListener("submit", (event)=>{
     event.preventDefault();
     submit();
 });
 
 function submit(){
     // get input values
-    const email = document.getElementById("email").value;
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
@@ -13,7 +12,7 @@ function submit(){
 
 
     // api call to submit
-    fetch('/api/router.php?route=signup', {
+    fetch('/api/router.php?route=login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -32,7 +31,6 @@ function submit(){
         })
         .catch(error => {
             // Handle errors
-            document.getElementById('message').textContent = 'Signup failed. Try again.';
             console.error('Error:', error);
         });
 }
