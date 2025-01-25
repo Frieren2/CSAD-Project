@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinemas</title>
-    <link href="css/ui.css" rel="stylesheet" type="text/css">
-</head>
-<body>
 
     <ul>
         <li><button onclick="submitLocation('Golden Village (Plaza)')">Golden Village (Plaza) <span class="arrow">></span></button></li>
@@ -57,5 +48,3 @@
             }
         }
     </script>
-</body>
-</html>
