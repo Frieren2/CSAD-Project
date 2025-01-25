@@ -1,26 +1,60 @@
-<div class="container">
-    <h1>Welcome to the Movie Website</h1>
-    <div id="home" class="movies">
-        <div class="movie">
-            <img src="resources/movie-poster.png" alt="Movie 1 Poster">
-            <div class="movie-info">
-                <h2>Movie 1</h2>
-                <p>2023</p>
+<div class="container mt-5">
+    <h1 class="headers">Welcome back</h1>
+
+    <div class="mt-4">
+        <h2 class="headers">Now Showing:</h2>
+        <div class="movies d-flex flex-wrap">
+            <div class="movie">
+                <img src="css/movie-poster.png" alt="Movie 1 Poster">
+                <div class="movie-info">
+                    <h2>Movie 1</h2>
+                    <p>2023</p>
+                </div>
+                <div class="movie-details">
+                    <h2>Movie 1</h2>
+                    <p>Age Rating: PG-13</p>
+                    <p>Running Time: 120 mins</p>
+                    <p>Genres: Action, Adventure</p>
+                    <button class="btn-book-now">Book Now</button>
+                </div>
             </div>
+
+            <!-- Add more movies as needed -->
         </div>
-        <div class="movie">
-            <img src="resources/movie-poster.png" alt="Movie 2 Poster">
-            <div class="movie-info">
-                <h2>Movie 2</h2>
-                <p>2022</p>
+    </div>
+
+    <div class="mt-4">
+        <h2 class="headers">Upcoming:</h2>
+        <div class="movies d-flex flex-wrap">
+            <div class="movie">
+                <img src="css/movie-poster.png" alt="Movie 1 Poster">
+                <div class="movie-info">
+                    <h2>Movie 1</h2>
+                    <p>2023</p>
+                </div>
+                <div class="movie-details">
+                    <h2>Movie 1</h2>
+                    <p>Age Rating: PG-13</p>
+                    <p>Running Time: 120 mins</p>
+                    <p>Genres: Action, Adventure</p>
+                    <button class="btn-book-now">Book Now</button>
+                </div>
             </div>
-        </div>
-        <div class="movie">
-            <img src="resources/movie-poster.png" alt="Movie 3 Poster">
-            <div class="movie-info">
-                <h2>Movie 3</h2>
-                <p>2021</p>
+            <div class="movie">
+                <img src="css/movie-poster.png" alt="Movie 1 Poster">
+                <div class="movie-info">
+                    <h2>Movie 1</h2>
+                    <p>2023</p>
+                </div>
+                <div class="movie-details">
+                    <h2>Movie 1</h2>
+                    <p>Age Rating: PG-13</p>
+                    <p>Running Time: 120 mins</p>
+                    <p>Genres: Action, Adventure</p>
+                    <button class="btn-book-now">Book Now</button>
+                </div>
             </div>
+            <!-- Add more movies as needed -->
         </div>
     </div>
 </div>
