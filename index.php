@@ -5,27 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absolute Cinema</title>
     <link rel="stylesheet" href="css/styles.css">
+    <?php
+    // Default values
+    $page = 'home'; // Default page
+    $stylesheet = "css/styles.css";
+
+    if (isset($_GET['page'])) {
+        // Sanitize the input
+        $page = preg_replace('/[^a-zA-Z0-9_-]/', '', $_GET['page']);
+    }
+
+    // Determine the stylesheet and page to include
+    switch ($page) {
+        case 'home':
+            $stylesheet = 'css/home.css';
+            break;
+        case 'theatres':
+            $stylesheet = 'css\ui.css';
+            break;
+        case 'tickets':
+            $stylesheet = 'css/tickets.css';
+            break;
+        default:
+            $page = '404'; // Handle invalid pages
+            $stylesheet = 'css/404.css';
+            break;
+    }
+
+    echo "<title>Absolute Cinema - " . ucfirst($page) . "</title>";
+    echo "<link rel='stylesheet' href='$stylesheet'>";
+    ?>
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
+<?php include 'navbar.php'; ?>
 
-    <div class="container">
-        <?php
-        // Determine which page to display based on the "page" query parameter
-        if (isset($_GET['page'])) {
-            $page = $_GET['page'];
-            $validPages = ['home', 'theatres', 'tickets'];
-            if (in_array($page, $validPages)) {
-                include "$page.php";
-            } else {
-                echo "<h1>Page not found</h1>";
-            }
-        } else {
-            // Default page is home
+<div class="container">
+    <?php
+    // Include the correct page content
+    switch ($page) {
+        case 'home':
             include 'home.php';
-        }
-        ?>
-    </div>
+            break;
+        case 'theatres':
+            include 'theatres.php';
+            break;
+        case 'tickets':
+            include 'tickets.php';
+            break;
+        default:
+            echo "<h1>Page not found</h1>";
+            break;
+    }
+    ?>
+</div>
 
     <div id="login-modal" class="modal hidden">
         <div class="modal-content">
