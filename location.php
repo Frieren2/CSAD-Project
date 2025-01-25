@@ -63,7 +63,7 @@ if (isset($cinemaLat) && isset($cinemaLng)) {
         <?php endif; ?>
     </div>
     <div style="text-align: center;">
-        <a href="theatres.php">Go Back</a>
+        <a href="index.php?page=theatres">Go Back</a>
     </div>
 </body>
 </html>
