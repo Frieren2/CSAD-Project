@@ -1,0 +1,35 @@
+.movie-details-top {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.movie-poster {
+    max-width: 300px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.movie-poster img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.movie-info {
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.movie-info h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.movie-info p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.locations-timings {
+    margin-top: 30px;
+}
