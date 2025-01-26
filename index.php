@@ -101,5 +101,6 @@
     </div>
 
     <script src="javascript/scripts.js"></script>
+    <?php if($page == 'movie-details') echo "<script src='javascript\movie-date.js'></script>" ?>
 </body>
 </html>
