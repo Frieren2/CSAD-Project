@@ -1,22 +1,78 @@
+.container {
+    padding-top: 0; /* Reduce padding at the top of the container */
+    margin-top: 0; /* Ensure no extra margin is added */
+}
+
+.headers {
+    margin-top: 0; /* Remove extra margin from the headers */
+    padding-top: 0; /* Remove extra padding from the headers */
+}
 .headers{
     text-align: center;
 }
 
+.movies {
+    display: flex;
+    gap: 12px; /* Space between movie cards */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+.movie-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.movies::-webkit-scrollbar {
+    display: none; /* Hide scrollbars */
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgb(100, 0, 100);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+    background-color: rgb(150, 0, 150);
+}
+
+.scroll-button.left {
+    left: -50px; /* Position to the left */
+}
+
+.scroll-button.right {
+    right: -50px; /* Position to the right */
+}
+
+
 .movie {
     position: relative;
     overflow: hidden;
+    text-align: center; /* Center text inside movie cards */
     border-radius: 10px;
+    flex: 0 0 auto; 
     margin: 10px;
+    width: 290px; /* Matches the image's max-width */
+    display: inline-block;
 }
 
 .movie img {
     width: 100%;
-    display: block;
-    transition: transform 0.3s ease;
+    height: auto; /* Ensures responsiveness */
+    aspect-ratio: 2 / 3; /* Sets a 2:3 aspect ratio */
+    object-fit: cover; /* Crops images to fit the aspect ratio */
 }
 
 .movie:hover img {
     transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 .movie-info {
@@ -25,10 +81,18 @@
     width: 100%;
     background: rgba(0, 0, 0, 0.9);
     color: #fff;
-    padding: 10px;
+    padding: 5px;
+    padding-bottom: 0px;
     text-align: center;
     transition: opacity 0.3s ease;
     opacity: 1;
+}
+.movie-info h2{
+    font-size: medium;
+}
+
+.movie-info p{
+    font-size: small;
 }
 
 .movie-details {
@@ -51,13 +115,18 @@
     overflow: hidden; /* Prevents overflow issues */
 }
 
-.movie-details h2,
-.movie-details p,
-.movie-details button {
-    margin-top: 10px; /* Adds space above the button */
-    margin-bottom: 10px; /* Adds space between elements */
+.movie-details h2{
+    margin-top: 12px;
+}
+.movie-details p {
+    margin-top: 5px; /* Adds space above the button */
+    margin-bottom: 5px; /* Adds space between elements */
     max-width: 90%; /* Prevents text from overflowing */
     word-wrap: break-word; /* Wraps long words */
+}
+.movie-details a{
+    margin-top: auto;
+    margin-bottom: 10px;
 }
 
 .movie:hover .movie-details {

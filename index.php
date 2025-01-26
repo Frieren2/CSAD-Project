@@ -19,6 +19,8 @@
     switch ($page) {
         case 'home':
             $stylesheet = 'css/home.css';
+            $script = "javascript/scroll.js";
+            echo "<script src='$script'></script>";
             break;
         case 'theatres':
             $stylesheet = 'css/ui.css';
