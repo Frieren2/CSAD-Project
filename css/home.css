@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(30, 30, 30);
+    background-image: linear-gradient(black,rgb(50,50,50), black)
 }
 .container {
     padding-top: 0; /* Reduce padding at the top of the container */

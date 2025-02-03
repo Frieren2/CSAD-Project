@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +32,9 @@
         case 'movie-details':
             $stylesheet = 'css/movie-details.css';
             break;
+        case 'select-seat':
+            $stylesheet = 'css/select-seat.css';
+            break;
         default:
             $page = '404'; // Handle invalid pages
             $stylesheet = 'css/404.css';
@@ -40,35 +44,39 @@
     echo "<title>Absolute Cinema - " . ucfirst($page) . "</title>";
     echo "<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'>";
     echo "<link rel='stylesheet' href='$stylesheet'>";
-   
+
     ?>
 </head>
-<body>
-<?php include 'navbar.php'; ?>
-<div class="container">
 
-    <?php
-    // Include the correct page content
-    switch ($page) {
-        case 'home':
-            include 'home.php';
-            break;
-        case 'theatres':
-            include 'theatres.php';
-            break;
-        case 'tickets':
-            include 'tickets.php';
-            break;
-        case 'movie-details':
-            include 'movie-details.php';
-            break;
-        default:
-            echo "<h1>Page not found</h1>";
-            break;
-    }
-    ?>
-    
-</div>
+<body>
+    <?php include 'navbar.php'; ?>
+    <div class="container">
+
+        <?php
+        // Include the correct page content
+        switch ($page) {
+            case 'home':
+                include 'home.php';
+                break;
+            case 'theatres':
+                include 'theatres.php';
+                break;
+            case 'tickets':
+                include 'tickets.php';
+                break;
+            case 'movie-details':
+                include 'movie-details.php';
+                break;
+            case 'select-seat':
+                include 'select-seat.php';
+                break;
+            default:
+                echo "<h1>Page not found</h1>";
+                break;
+        }
+        ?>
+
+    </div>
 
     <div id="login-modal" class="modal hidden">
         <div class="modal-content">
@@ -101,6 +109,16 @@
     </div>
 
     <script src="javascript/scripts.js"></script>
-    <?php if($page == 'movie-details') echo "<script src='javascript\movie-date.js'></script>" ?>
+    <?php if ($page == 'movie-details') {
+        echo "<script src='javascript\movie-date.js'></script>";
+       
+        echo "<script src='javascript/date-filter.js'></script>";
+        echo "<script>const movieId = " . json_encode($movieId) . ";</script>"; //pass php constant into js
+        echo "<script>handleDateChange(document.getElementById('date-selector').value)</script>";
+    } else if ($page == "select-seat") {
+        $script = "javascript/select-seat.js";
+        echo "<script src='$script'></script>";
+    }
+    ?>
 </body>
 </html>

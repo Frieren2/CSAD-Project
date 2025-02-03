@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image:linear-gradient(black,rgb(50, 50, 50));
+    color: white;
+}
+
+h1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.select-seat-container {
+    width: 100%;
+    background-color: rgb(27, 27, 27);
+    padding: 20px;
+    border-radius: 15px;
+    min-width: min-content;
+    max-width: 85%;
+    margin: auto;
+    margin-bottom: 50px;
+    
+}
+.screen {
+    background-color: gray;
+    border-radius: 5px;
+    width: 60%;
+    height: 50px;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+}
+.seat-container {
+    display: grid;
+    grid-template-columns: repeat(16, 40px);
+    gap: 10px;
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.aisle {
+    width: 20px;
+    height: 30px;
+    background: transparent;
+}
+.seat {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.seat.selected {
+    background-color: blue;
+}
+.seat.occupied {
+    background-color: rgb(255, 0, 0);
+    cursor: not-allowed;
+}
+.summary {
+    overflow: hidden;
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+    background:rgb(95, 0, 95);
+    width: 85%;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.summary img {
+    width:20%;
+    height: auto; /* Ensures responsiveness */
+    aspect-ratio: 2 / 3; /* Sets a 2:3 aspect ratio */
+    object-fit: cover; /* Crops images to fit the aspect ratio */
+}
+.summary-text {
+    margin-left: 20px;
+    text-align: left;
+}
+.summary-text h2{
+    margin-bottom: 30px;
+}
+button {
+    background-color: rgb(255, 0, 255);
+    color: white;
+    border: none;
+    padding: auto;
+    border-radius: 40px;
+    margin:auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right:0px;
+    width: 30%;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(150, 0, 150);
+}
