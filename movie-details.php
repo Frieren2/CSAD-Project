@@ -38,22 +38,7 @@ if ($movieId <= 0) {
             <label for="date-selector">Choose a Date:</label>
             <input type="date" id="date-selector" onchange="handleDateChange(this.value)">
         </div>
-        <div class="location">
-            <h3>Cathay Cineplex (Downtown)</h3>
-            <ul>
-                <li><button class="timing-btn">10:00 AM</button></li>
-                <li><button class="timing-btn">1:00 PM</button></li>
-                <li><button class="timing-btn">4:00 PM</button></li>
-                <li><button class="timing-btn">7:00 PM</button></li>
-            </ul>
-        </div>
-        <div class="location">
-            <h3>Golden Village (City Square)</h3>
-            <ul>
-                <li><button class="timing-btn">11:00 AM</button></li>
-                <li><button class="timing-btn">2:00 PM</button></li>
-                <li><button class="timing-btn">5:00 PM</button></li>
-            </ul>
-        </div>
+        <!-- The container for dynamically loaded locations & timings -->
+        <div id="locations-container"></div>
     </div>
 </div>
