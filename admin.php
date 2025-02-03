@@ -14,7 +14,7 @@
         // Determine which page to display based on the "page" query parameter
         if (isset($_GET['page'])) {
             $page = $_GET['page'];
-            $validPages = ['homepage', 'addMovie', 'viewMovie','addShow','todayShows','booking','viewShow','theatreDetails','logout'];
+            $validPages = ['homepage', 'addMovie', 'viewMovie','addShow','booking','viewShow','logout'];
             if (in_array($page, $validPages)) {
                 include "$page.php";
             } else {
