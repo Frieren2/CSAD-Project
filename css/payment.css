@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image:linear-gradient(black,rgb(50, 50, 50));
+    color: white;
+    height: 100vh;
+    margin: 0;
+}
+.navbar {
+    margin-bottom: 80px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    overflow: hidden;
+    background-color: rgb(96, 0, 96);
+    padding: 20px;
+    padding-top: 5px ;
+    padding-right: 0px;
+    border-radius: 10px;
+    width: 900px;
+}
+.summary-header {
+    text-align: center;
+    background-color: rgba(255, 0, 255, 0.145);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    width: 90%;
+}
+.movie-title {
+    font-weight: bold;
+}
+.details{
+    display: flex;
+    margin-bottom: 15px;
+}
+.details-left {
+    flex: 1;
+    line-height: 2.0;
+    max-width: 60%;
+}
+.details-right{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.details-right img{
+    display: block; 
+    aspect-ratio: 2/3;
+    width: auto; /* Stretch to fill the container width */
+    height: 250px; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop if necessary to fit container */
+    margin-left: auto;
+    margin-right: 85px;
+    border-radius: 10px;
+
+}
+.payment-breakdown {
+    width: 90%;
+    border-top: 1px solid white;
+    padding-top: 10px;
+}
+.payment-breakdown table {
+    width: 100%;
+}
+.payment-breakdown th, .payment-breakdown td {
+    padding: 8px;
+    text-align: left;
+}
+.total {
+    font-size: 24px;
+    text-align: right;
+    margin-top: 10px;
+}
+.button-container {
+    display: flex;
+    border: 2px solid #000; /* Outer border */
+    border-radius: 15px;
+    overflow: hidden;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0%;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    flex: 1;
+}
+
+.back {
+    background-color: violet; /* Different color for Back button */
+    border-right: 2px solid #000; /* Separator */
+}
+
+.proceed {
+    background-color: magenta;
+}
+
+.back:hover {
+    background-color: rgb(155, 0, 155);
+}
+.proceed:hover{
+    background-color: rgb(155, 0, 155);
+}
