@@ -18,7 +18,7 @@ function submit(){
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }), // convert data to JSON
+        body: JSON.stringify({ username, email, password }), // convert data to JSON
     })
         .then(response => {
             if (!response.ok) {

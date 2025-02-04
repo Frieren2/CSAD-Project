@@ -44,3 +44,13 @@ CREATE TABLE orders (
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (ticket_id) REFERENCES tickets(id)
 );
+
+-- Create the admin table
+CREATE TABLE admin (
+    id INT AUTO_INCREMENT PRIMARY KEY, -- Unique ID for each admin
+    name VARCHAR(100) NOT NULL,        -- Admin name
+    password_hash VARCHAR(255) NOT NULL, -- Password hash for secure storage
+    security_key VARCHAR(255) NOT NULL -- Security key for additional authentication
+    
+);
+
