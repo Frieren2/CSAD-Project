@@ -53,7 +53,9 @@ try {
             'id' => $pdo->lastInsertId(), // Get the ID of the inserted row
             'username' => $data['name'],
         ]
-    ]); } catch (PDOException $e) {
+    ]);
+
+} catch (PDOException $e) {
     // Handle database errors
     http_response_code(500);
     echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);

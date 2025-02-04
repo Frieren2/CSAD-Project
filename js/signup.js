@@ -32,7 +32,6 @@ function submit(){
         })
         .catch(error => {
             // Handle errors
-            document.getElementById('message').textContent = 'Signup failed. Try again.';
             console.error('Error:', error);
         });
 }
