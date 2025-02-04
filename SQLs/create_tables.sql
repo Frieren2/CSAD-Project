@@ -40,16 +40,16 @@ CREATE TABLE users (
 CREATE TABLE tickets (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     seat_number VARCHAR(50) UNIQUE NOT NULL, -- Ensures unique seat assignments
-    u_id BIGINT NULL, -- Tracks the current owner (NULL if not booked)
-    show_id BIGINT NOT NULL, -- References the show this ticket belongs to
+    u_id INT NULL, -- Tracks the current owner (NULL if not booked)
+    show_id INT NOT NULL, -- References the show this ticket belongs to
     availability ENUM('available', 'booked', 'resale') DEFAULT 'available',
     FOREIGN KEY (show_id) REFERENCES shows(id) ON DELETE CASCADE, -- Deletes tickets if show is deleted
-    FOREIGN KEY (u_id) REFERENCES users(id) ON DELETE SET NULL -- Unassigns user if deleted
+    FOREIGN KEY (u_id) REFERENCES users(id) -- Unassigns user if deleted
 );
 
 CREATE TABLE orders (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    user_id BIGINT NOT NULL, -- User who placed the order
+    user_id INT NOT NULL, -- User who placed the order
     ticket_id BIGINT NOT NULL, -- Ticket being purchased or resold
     type ENUM('purchase', 'resale') NOT NULL, -- Defines whether it's a purchase or resale
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Automatically tracks order time
