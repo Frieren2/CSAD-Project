@@ -22,12 +22,13 @@
           const btn = document.createElement('button');
           btn.className = "timing-btn";
           btn.textContent = time;
+          const datetime = selectedDate + " " + time;
   
 
-          btn.addEventListener('click', function() {
+          btn.addEventListener('click', function() { //pass on values to next page
             const url = `index.php?page=select-seat&movieId=${encodeURIComponent(movieId)}`
                       + `&location=${encodeURIComponent(cinema.location)}`
-                      + `&time=${encodeURIComponent(time)}`;
+                      + `&time=${encodeURIComponent(datetime)}`;
   
             window.location.href = url;
           });

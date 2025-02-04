@@ -1,6 +1,6 @@
 <?php
 // Get the movie ID from the URL
-$movieId = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+$movieId = isset($_GET['movieId']) ? (int) $_GET['movieId'] : 0;
 
 // Validate the movie ID
 if ($movieId <= 0) {

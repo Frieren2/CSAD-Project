@@ -35,6 +35,9 @@
         case 'select-seat':
             $stylesheet = 'css/select-seat.css';
             break;
+        case 'payment':
+            $stylesheet = 'css/payment.css';
+            break;
         default:
             $page = '404'; // Handle invalid pages
             $stylesheet = 'css/404.css';
@@ -69,6 +72,9 @@
                 break;
             case 'select-seat':
                 include 'select-seat.php';
+                break;
+            case 'payment':
+                include 'payment.php';
                 break;
             default:
                 echo "<h1>Page not found</h1>";
@@ -118,7 +124,12 @@
     } else if ($page == "select-seat") {
         $script = "javascript/select-seat.js";
         echo "<script src='$script'></script>";
+        echo"<script>const movieId = " . json_encode($movieId) . ";</script>";
+    } else if ($page == "payment") {
+        $script = "javascript/payment.js";
+        echo "<script src='$script'></script>";
     }
+
     ?>
 </body>
 </html>

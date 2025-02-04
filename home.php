@@ -14,7 +14,7 @@
                         <p>Age Rating: PG-13</p>
                         <p>Running Time: 120 mins</p>
                         <p>Genres: Action, Adventure, Comedy</p>
-                        <a href="index.php?page=movie-details&id=1" class="btn-book-now">Book Now</a>
+                        <a href="index.php?page=movie-details&movieId=1" class="btn-book-now">Book Now</a>
                     </div>
                 </div>
                 <div class="movie">
@@ -25,7 +25,7 @@
                         <p>Age Rating: PG-13</p>
                         <p>Running Time: 120 mins</p>
                         <p>Genres: Action, Adventure, Comedy</p>
-                        <a href="index.php?page=movie-details&id=1" class="btn-book-now">Book Now</a>
+                        <a href="index.php?page=movie-details&movieId=2" class="btn-book-now">Book Now</a>
                     </div>
                 </div>
                 <div class="movie">
@@ -36,7 +36,7 @@
                         <p>Age Rating: PG-13</p>
                         <p>Running Time: 120 mins</p>
                         <p>Genres: Action, Adventure, Comedy</p>
-                        <a href="index.php?page=movie-details&id=1" class="btn-book-now">Book Now</a>
+                        <a href="index.php?page=movie-details&movieId=3" class="btn-book-now">Book Now</a>
                     </div>
                 </div>
                 <div class="movie">
@@ -47,7 +47,7 @@
                         <p>Age Rating: PG-13</p>
                         <p>Running Time: 120 mins</p>
                         <p>Genres: Action, Adventure, Comedy</p>
-                        <a href="index.php?page=movie-details&id=1" class="btn-book-now">Book Now</a>
+                        <a href="index.php?page=movie-details&movieId=4" class="btn-book-now">Book Now</a>
                     </div>
                 </div>
                 <div class="movie">
@@ -58,7 +58,7 @@
                         <p>Age Rating: PG-13</p>
                         <p>Running Time: 120 mins</p>
                         <p>Genres: Action, Adventure, Comedy</p>
-                        <a href="index.php?page=movie-details&id=1" class="btn-book-now">Book Now</a>
+                        <a href="index.php?page=movie-details&movieId=5" class="btn-book-now">Book Now</a>
                     </div>
                 </div>
                 <div class="movie">
@@ -69,7 +69,7 @@
                         <p>Age Rating: PG-13</p>
                         <p>Running Time: 120 mins</p>
                         <p>Genres: Action, Adventure, Comedy</p>
-                        <a href="index.php?page=movie-details&id=1" class="btn-book-now">Book Now</a>
+                        <a href="index.php?page=movie-details&movieId=6" class="btn-book-now">Book Now</a>
                     </div>
                 </div>
                 <!-- Add more movies as needed -->
