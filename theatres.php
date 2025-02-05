@@ -1,4 +1,6 @@
 
+    <h1>Theatre Locations</h1>
+    
     <ul>
         <li><button onclick="submitLocation('Golden Village (Plaza)')">Golden Village (Plaza) <span class="arrow">></span></button></li>
         <li><button onclick="submitLocation('Cathay Cineplexes (Jem)')">Cathay Cineplexes (Jem) <span class="arrow">></span></button></li>

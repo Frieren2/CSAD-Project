@@ -123,8 +123,11 @@
     <script src="javascript/scripts.js"></script>
     <?php if ($page == 'movie-details') {
         echo "<script src='javascript\movie-date.js'></script>";
-       
         echo "<script src='javascript/date-filter.js'></script>";
+        echo "<script> document.getElementById('back-button').addEventListener('click', function() 
+        {
+            window.history.back();
+        });</script>";
         echo "<script>const movieId = " . json_encode($movieId) . ";</script>"; //pass php constant into js
         echo "<script>handleDateChange(document.getElementById('date-selector').value)</script>";
     } else if ($page == "select-seat") {

@@ -45,7 +45,7 @@ $seatsDisplay = !empty($selectedSeats) ? implode(", ", $selectedSeats) : "None";
         </table>
     </div>
 
-<form id="checkout-form" action="checkout.php" target="blank" method="POST"></form>
+<form id="checkout-form" action="checkout.php" method="POST"></form>
 <div class="button-container">
         <button class="btn back" id="back-button">Back</button>
         <button class="btn proceed" id="proceed-button">Proceed to Payment</button>
