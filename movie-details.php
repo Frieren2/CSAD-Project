@@ -7,8 +7,8 @@ if ($movieId <= 0) {
     die("Invalid movie ID.");
 }
 ?>
-
 <div class="container">
+<button id="back-button">&#x25c0</button>
     <div class="movie-banner" style="background-image:url('resources/movie-banner.png')"></div>
     <div class="movie-details-top">
         <div class="movie-poster">

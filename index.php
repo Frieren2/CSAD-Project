@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absolute Cinema</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles-user.css">
     <?php
     // Default values
     $page = 'home'; // Default page
@@ -37,6 +37,9 @@
             break;
         case 'payment':
             $stylesheet = 'css/payment.css';
+            break;
+        case 'success':
+            $stylesheet = 'css/success.css';
             break;
         default:
             $page = '404'; // Handle invalid pages
@@ -75,6 +78,9 @@
                 break;
             case 'payment':
                 include 'payment.php';
+                break;
+            case 'success':
+                include 'success.php';
                 break;
             default:
                 echo "<h1>Page not found</h1>";

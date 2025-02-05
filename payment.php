@@ -11,7 +11,7 @@ $qty = count($selectedSeats);
 $seatsDisplay = !empty($selectedSeats) ? implode(", ", $selectedSeats) : "None";
 
 ?>
-<div class="container">
+
     <h2 class="summary-header">Summary</h2>
     <div class="details">
         <div class="details-left">
@@ -44,7 +44,6 @@ $seatsDisplay = !empty($selectedSeats) ? implode(", ", $selectedSeats) : "None";
             </tr>
         </table>
     </div>
-</div>
 
 <form id="checkout-form" action="checkout.php" target="blank" method="POST"></form>
 <div class="button-container">

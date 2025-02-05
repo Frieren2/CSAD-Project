@@ -1,0 +1,46 @@
+h1{
+    color: white;
+    text-align: center;
+    margin: 20px;
+}
+body {
+    background-image: linear-gradient(black, rgb(50,50,50));
+}
+
+.ticket {
+    overflow: hidden;
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+    background:rgb(95, 0, 95);
+    width: 85%;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 300px;
+}
+
+.ticket img {
+    width:20%;
+    height: auto; /* Ensures responsiveness */
+    aspect-ratio: 2 / 3; /* Sets a 2:3 aspect ratio */
+    object-fit: cover; /* Crops images to fit the aspect ratio */
+    border-radius: 10px;
+}
+.ticket button{
+    border:none;
+    color: white;
+    font-size: larger;
+    background-color: transparent;
+
+}
+.ticket-text {
+    color: white;
+    margin-left: 20px;
+    text-align: left;
+    font-size: large;
+    width: 50%;
+}
+.ticket-text h2{
+    margin-bottom: 30px;
+}

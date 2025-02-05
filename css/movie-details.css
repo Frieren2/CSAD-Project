@@ -11,6 +11,22 @@ body {
     margin-left: 0px;
     margin-right: 0px;
 }
+#back-button {
+    all: unset;  
+    position: absolute;
+    color: magenta;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0);
+    margin-right: auto;
+    margin-top: 250px;
+    margin-bottom: auto;
+    margin-left: 85px;
+    border-radius: 10px;
+    font-size: 32px;
+    text-decoration: none; /* Remove any inherited underlines */
+}
 
 .movie-banner{
     position:absolute;

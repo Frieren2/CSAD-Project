@@ -39,6 +39,6 @@ if (empty($location) || empty($time)) {
         <input type="hidden" name="location" value="<?= $location ?>">
         <input type="hidden" name="time" value="<?= $time ?>">
         <input type="hidden" name="screen" value="<?= $screen ?>">
-        <button type="button" onclick="submitSeats()">Proceed to payment</button>
+        <button type="button" onclick="submitSeats()">Next</button>
     </form>
 </div>
