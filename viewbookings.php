@@ -7,11 +7,8 @@ if (!$db) {
 }
 
 
-$sql = "SELECT * FROM moviedetails";
+$sql = "SELECT * FROM bookings";
 $result = mysqli_query($db, $sql);
-
-//check if role is 'user'
-$role = $_SESSION['role'] ?? 'user';
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +16,7 @@ $role = $_SESSION['role'] ?? 'user';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Movies</title>
+    <title>View Bookings</title>
     <style>
         table {
             width: 100%;
@@ -37,40 +34,36 @@ $role = $_SESSION['role'] ?? 'user';
 </head>
 <body>
 
-    <h2>Movie List</h2>
+    <h2>Booking List</h2>
 
     <?php if (mysqli_num_rows($result) > 0): ?>
         <table>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Genres</th>
-                <th>Description</th>
-                <th>Rating</th>
+                <th>Email</th>
+                <th>Show</th>
                 <th>Cinema</th>
                 <th>Screen</th>
-
+                <th>Showtime</th>
+                <th>Seat Number</th>
             </tr>
             <?php while ($row = mysqli_fetch_assoc($result)): ?>
                 <tr>
-                    <td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['name']; ?></td>
-                    <td><?php echo $row['genres']; ?></td>
-                    <td><?php echo $row['description']; ?></td>
-                    <td><?php echo $row['rating']; ?></td>
+                    <td><?php echo $row['email']; ?></td>
+                    <td><?php echo $row['showname']; ?></td>
                     <td><?php echo $row['cinema']; ?></td>
                     <td><?php echo $row['screen']; ?></td>
+                    <td><?php echo $row['showtime']; ?></td>
+                    <td><?php echo $row['seat']; ?></td>
                 </tr>
             <?php endwhile; ?>
         </table>
     <?php else: ?>
-        <p>No movies found.</p>
+        <p>No bookings found</p>
     <?php endif; ?>
 
     <br>
-    <?php if ($role === 'admin'): ?>
-        <a href="addmovie.php">Add a New Movie</a>
-    <?php endif; ?>
+    <a href="addbooking.php">Add a New Booking</a>
+
 </body>
 </html>
 

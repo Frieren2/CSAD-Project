@@ -12,23 +12,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "SELECT id , hashedpassword, role FROM userlogin WHERE email = ?";
+    $sql = "SELECT id, email, hashedpassword, role FROM userlogin WHERE email = ?";
     $stmt = $db->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
-    $stmt->bind_result($id, $hashed_password, $role);
+    $stmt->bind_result($id, $db_email, $hashed_password, $role);
     $stmt->fetch(); 
 
     if ($id) {
 
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user_id'] = $id;
+            $_SESSION['user_email'] = $db_email;
             $_SESSION['role'] = $role;
 
             if ($role == "admin") {
                 echo "Admin login successful!";
+                header("Location: adminmain.php");
             } else {
                 echo "User login successful!";
+                header("Location: usermain.php");
             }
         } else {   
             $_SESSION['message'] = "Invalid password. Please try again.";

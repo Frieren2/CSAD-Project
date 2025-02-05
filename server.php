@@ -27,20 +27,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO userlogin (email, password ,hashedpassword) VALUES ('$email', '$password', '$hashed_password')";
+    $sql = "INSERT INTO userlogin (email, password, hashedpassword, role) VALUES (?, ?, ?, ?)";
     $stmt = $db->prepare($sql);
-    $stmt->bind_param("ssss", $email, $password, $hashed_password, $role);
+    if ($stmt) {
+        $stmt->bind_param("ssss", $email, $password, $hashed_password, $role);
 
-    if ($stmt->execute()) {
-        $_SESSION['message'] = "Sign Up Successful";
-        header("Location: login.php"); // Redirect to login page after signup
-        exit();
+        if ($stmt->execute()) {
+            $_SESSION['message'] = "Sign Up Successful";
+            header("Location: login.php"); // Redirect to login page after signup
+            exit();
+        } else {
+            $_SESSION['message'] = "Sign Up Unsuccessful: " . $stmt->error;
+            header("Location: signup.php"); // Redirect back to signup page
+            exit();
+        }
+
+        $stmt->close();
     } else {
-        $_SESSION['message'] = "Sign Up Unsuccessful: " . $stmt->error;
-        header("Location: signup.php"); // Redirect back to signup page
+        $_SESSION['message'] = "Error preparing statement: " . $db->error;
+        header("Location: signup.php");
         exit();
     }
-
 }
 
 $db->close();
