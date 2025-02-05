@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-image: linear-gradient(white,rgb(205, 196, 196),white);
 }
 
 .sidebar {
@@ -160,7 +160,7 @@ input[type="radio"]{
     color: #ffffff;
   }
   .button {
-    margin-top: 10px;
+    margin-top: 20px;
     background-color: #fff;
     border: 1 solid black;
     border-radius: 1.5rem;
@@ -262,4 +262,18 @@ input[type="checkbox"]:not(:checked)+label::after{
     gap: 20px; /* Space between image and buttons */
     margin-left: 280px; 
     font-family: Arial, sans-serif;
+}
+#date-selector {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid wheat(70, 0, 70);
+    border-radius: 5px;
+    background-color: wheat(70, 0, 70);
+    color: black;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#date-selector:hover, #date-selector:focus {
+    border-color: wheat; /* Highlight border on hover/focus */
 }
