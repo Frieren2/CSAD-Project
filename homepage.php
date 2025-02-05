@@ -31,7 +31,7 @@
         <button id="next-date" class="buttondate">&gt;</button>
     </div>
 
-    <div class="movie-list" id="movie-list" style="margin-left:220px">
+    <div class="movie-list" id="movie-list" style="margin-left:250px">
         <!-- Movies will be added dynamically -->
     </div>
     <h2 class="headers" id="screen">Available Screens:</h2>
