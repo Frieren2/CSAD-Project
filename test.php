@@ -1,23 +1,26 @@
-<style>
-.cinema-button {
-    background: grey;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Schedule</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background: #121212;
     color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
+    text-align: center;
 }
+
 .date-nav {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-left:100px;
    
 }
 
-.buttondate {
+button {
     background: red;
     color: white;
     border: none;
@@ -31,14 +34,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right:110px;
     gap: 20px;
 }
 
 .movie {
     display: flex;
     align-items: center;
-    background: grey;
+    background: #222;
     padding: 15px;
     border-radius: 10px;
     width: 80%;
@@ -69,99 +71,22 @@
     text-align: center; /* Center text inside the box */
 
 }
-</style>
 
+    </style>
+</head>
+<body>
 
-<h1 class="headers">Welcome Admin:</h1>
-<div>
-    <span class="headers">Cinemas:</span>
-    <select class="select" onchange="changeImage()" id="cinemaSelect">
-        <option value="Cathay Cineplexes (West Mall)">
-        Cathay Cineplexes (West Mall)
-        </option>
-        <option value="Cathay Cineplexes (Jem)">
-            Cathay Cineplexes (Jem)
-        </option>
-        <option value="Cathay Cineplexes (Causeway Point)">
-            Cathay Cineplexes (Causeway Point)
-        </option>
-        <option value="Golden Village (Plaza)">
-        Golden Village (Plaza)
-        </option>
-        <option value="Golden Village (Jurong Point)">
-            Golden Village (Jurong Point)
-        </option>
-    </select>
-    </div>
-    <div class="container">
-        <img id="cinemaImage" src="resources/westmall.jpeg" alt="Cinema Image">
-        <a href="#screen" class="cinema-button">Available Screens</a>
-    </div>
-    <div class="headers"><h2>Ongoing Shows:</h2></div>
     <div class="date-nav">
-        <button id="prev-date" class="buttondate">&lt;</button>
+        <button id="prev-date">&lt;</button>
         <span id="selected-date">Today</span>
-        <button id="next-date" class="buttondate">&gt;</button>
+        <button id="next-date">&gt;</button>
     </div>
 
-    <div class="movie-list" id="movie-list" style="margin-left:220px">
+    <div class="movie-list" id="movie-list">
         <!-- Movies will be added dynamically -->
     </div>
-    <div id="screen"><h2 class="headers">Available Screens:</h2></div>
-    <div class="headers" id="available-screens"></div>
 
-<script>
-const availableScreens = {
-    "Cathay Cineplexes (West Mall)": {
-        [formatDate(new Date())]: ["Screen 1", "Screen 2", "Screen 3"],
-        [formatDate(new Date(new Date().setDate(new Date().getDate() + 1)))]: ["Screen 1", "Screen 4"]
-    },
-    "Cathay Cineplexes (Jem)": {
-        [formatDate(new Date())]: ["Screen 5", "Screen 6"],
-        [formatDate(new Date(new Date().setDate(new Date().getDate() + 1)))]: ["Screen 5", "Screen 7"]
-    },
-    "Cathay Cineplexes (Causeway Point)": {
-        [formatDate(new Date())]: ["Screen 8"],
-        [formatDate(new Date(new Date().setDate(new Date().getDate() + 1)))]: ["Screen 9"]
-    },
-    "Golden Village (Plaza)": {
-        [formatDate(new Date())]: ["Screen 10", "Screen 11"],
-        [formatDate(new Date(new Date().setDate(new Date().getDate() + 1)))]: ["Screen 12"]
-    },
-    "Golden Village (Jurong Point)": {
-        [formatDate(new Date())]: ["Screen 13"],
-        [formatDate(new Date(new Date().setDate(new Date().getDate() + 1)))]: ["Screen 14"]
-    }
-};
-function updateScreens() {
-    const selectedCinema = document.getElementById("cinemaSelect").value;
-    const screenContainer = document.getElementById("available-screens");
-    screenContainer.innerHTML=""; // Reset previous screens
-
-    const screens = availableScreens[selectedCinema]?.[dates[currentDateIndex]] || ["No screens available"];
-
-    screens.forEach(screen => {
-        const screenElement = document.createElement("p");
-        screenElement.textContent = screen;
-        screenContainer.appendChild(screenElement);
-    });
-}
-    function changeImage() {
-            var select = document.getElementById("cinemaSelect");
-            var image = document.getElementById("cinemaImage");
-
-            var images = {
-                "Cathay Cineplexes (West Mall)": "resources/westmall.jpeg",
-                "Cathay Cineplexes (Jem)": "resources/jem.jpeg",
-                "Cathay Cineplexes (Causeway Point)": "resources/causeway.jpeg",
-                "Golden Village (Plaza)": "resources/plaza.jpeg",
-                "Golden Village (Jurong Point)": "resources/jurong.jpeg"
-            };
-
-            var selectedCinema = select.value;
-            image.src = images[selectedCinema];
-            updateScreens(); 
-        }
+    <script>
 function formatDate(date) {
     const options = { month: 'short', day: '2-digit', year: 'numeric' };
     return date.toLocaleDateString('en-US', options);
@@ -241,7 +166,6 @@ document.getElementById("prev-date").addEventListener("click", () => {
         currentDateIndex--;
         selectedDate.textContent = dates[currentDateIndex];
         updateMovies();
-        updateScreens(); // Update screens on date change
     }
 });
 
@@ -250,11 +174,15 @@ document.getElementById("next-date").addEventListener("click", () => {
         currentDateIndex++;
         selectedDate.textContent = dates[currentDateIndex];
         updateMovies();
-        updateScreens(); // Update screens on date change
     }
 });
 
 // Initialize movies on page load
 updateMovies();
-updateScreens();
+
+
+
     </script>
+</body>
+
+</html>
