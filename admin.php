@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absolute Cinema</title>
     <link rel="stylesheet" href="css/styles.css">
-    
+    <link rel="stylesheet" href="css/addMovie.css">
+    <link rel="stylesheet" href="css/addShow.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/tables.css">
     
 </head>
 <body>

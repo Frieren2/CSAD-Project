@@ -1,0 +1,46 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+/* Styling the table header */
+th {
+    background-color: #3D2A54;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+/* Styling table rows */
+td {
+    padding: 12px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    color: #333;
+    text-align: center;
+}
+
+/* Alternating row colors */
+tr:nth-child(even) {
+    background-color: #d3d3d3;
+}
+
+/* Hover effect on rows */
+tr:hover {
+    background-color: rgb(56, 56, 56);
+    
+}
+tr:hover td{
+   color:white;
+    
+}
+.edit{
+    height:30px;
+    width: 30px;
+    align-items: center;
+    
+}
