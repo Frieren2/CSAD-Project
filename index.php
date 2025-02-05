@@ -9,7 +9,7 @@
     <?php
     // Default values
     $page = 'home'; // Default page
-    $stylesheet = "css/styles.css";
+    $stylesheet = "css/styles-user.css";
 
     if (isset($_GET['page'])) {
         // Sanitize and trim the input
