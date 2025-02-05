@@ -1,77 +1,4 @@
-<style>
-.cinema-button {
-    background: grey;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-.date-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-left:100px;
-   
-}
-
-.buttondate {
-    background: red;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
-}
-
-.movie-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right:110px;
-    gap: 20px;
-}
-
-.movie {
-    display: flex;
-    align-items: center;
-    background: grey;
-    padding: 15px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-}
-
-.movie img {
-    width: 80px;
-    height: 120px;
-    margin-right: 15px;
-    border-radius: 5px;
-}
-
-.showtimes {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap; /* Prevents stretching if there are too many items */
-    justify-content: flex-start; /* Aligns showtimes neatly */
-}
-
-.showtime {
-    background: white;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px; /* Ensures consistent text size */
-    min-width: 70px; /* Set a minimum width */
-    text-align: center; /* Center text inside the box */
-
-}
-</style>
-
-
+<div style="display: flex; gap: 5px; flex-direction: column;">
 <h1 class="headers">Welcome Admin:</h1>
 <div>
     <span class="headers">Cinemas:</span>
@@ -107,9 +34,9 @@
     <div class="movie-list" id="movie-list" style="margin-left:220px">
         <!-- Movies will be added dynamically -->
     </div>
-    <div id="screen"><h2 class="headers">Available Screens:</h2></div>
+    <h2 class="headers" id="screen">Available Screens:</h2>
     <div class="headers" id="available-screens"></div>
-
+</div>
 <script>
 const availableScreens = {
     "Cathay Cineplexes (West Mall)": {
@@ -257,4 +184,5 @@ document.getElementById("next-date").addEventListener("click", () => {
 // Initialize movies on page load
 updateMovies();
 updateScreens();
+
     </script>

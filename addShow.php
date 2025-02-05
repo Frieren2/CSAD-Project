@@ -14,33 +14,14 @@ if ($conn->connect_error) {
 $sql = "SELECT id, name FROM movies";
 $results = $conn->query($sql);
 ?>
-<style>
-    #container {
-            display: flex;
-            gap: 20px;
-        }
-    .form-section {
-            flex: 1;
-        }
-    .preview-section {
-            flex: 1;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
-        }
-    .preview-box {
-            border: 1px solid #ccc;
-            padding: 10px;
-            background: white;
-        }
-</style>
+
 
 <div class="headers" id ="container">
     <form class="form-section" method="post" action="shows.php" onsubmit="return validateForm()">
         <h1>Add Show:</h1>
         <h4>Select Movie:</h4>
         <select class="select" id="movieSelect" name="movie">
-            <option value="">Select a Movie</option>
+            <option value="">Select a movie</option>
             <?php while ($row = $results->fetch_assoc()) { ?>
                 <option value="<?php echo $row['name']; ?>">
                     <?php echo htmlspecialchars($row['name']); ?>
@@ -50,6 +31,7 @@ $results = $conn->query($sql);
 
         <h4>Select Cinema:</h4>
         <select class="select" name="cinema" id="cinemaSelect">
+            <option value = "">Select a cinema</option>
             <option value="Cathay Cineplexes (West Mall)">Cathay Cineplexes (West Mall)</option>
             <option value="Cathay Cineplexes (Jem)">Cathay Cineplexes (Jem)</option>
             <option value="Cathay Cineplexes (Causeway Point)">Cathay Cineplexes (Causeway Point)</option>

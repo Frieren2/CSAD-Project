@@ -1,14 +1,11 @@
 <?php
 session_start();
-
 // 1. Connect to the database
 $db = mysqli_connect("localhost", "root", "", "csad");
-
 // Check connection
 if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
 // Initialize variables
 $name = "";
 $desc = "";
@@ -55,7 +52,8 @@ if (isset($_POST['add'])) { //Ensures that add button is clicked and
             VALUES (?, ?, ?, ?, ?, ?)"; //The ? are placeholders for values
     
     $stmt = mysqli_prepare($db, $sql); //is used to prepare an SQL statement for execution. mysqli_prepare(connection, query)
-    mysqli_stmt_bind_param($stmt, "sssssb", $name, $desc, $genres, $rating, $bannerPath, $posterData); //sssssb stands for the datatypes
+    mysqli_stmt_bind_param($stmt, "ssssss", $name, $desc,$posterData, $genres, $rating, $bannerPath ); //ssssss stands for the datatypes
+    mysqli_stmt_send_long_data($stmt, 2, $posterData);
 
     if ($stmt->execute()) {
         echo "<script>

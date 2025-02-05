@@ -36,15 +36,15 @@
         <label for="R21" class="rating">R21</label>
     </div>
     <div style="margin-top:20px; display: flex; align-items: center;">Genre:
-        <input type="checkbox" name="genre[]" id="horror" value="horror">
+        <input type="checkbox" name="genre[]" id="horror" value="Horror">
         <label for="horror">Horror</label>
-        <input type="checkbox" name="genre[]" id="action" value="action">
+        <input type="checkbox" name="genre[]" id="action" value="Action">
         <label for="action">Action</label>
-        <input type="checkbox" name="genre[]" id="drama" value="drama">
+        <input type="checkbox" name="genre[]" id="drama" value="Drama">
         <label for="drama">Drama</label>
-        <input type="checkbox" name="genre[]" id="comedy" value="comedy">
+        <input type="checkbox" name="genre[]" id="comedy" value="Comedy">
         <label for="comedy">Comedy</label>
-        <input type="checkbox" name="genre[]" id="romance" value="romance">
+        <input type="checkbox" name="genre[]" id="romance" value="Romance">
         <label for="romance">Romance</label>
     </div>
     <div>

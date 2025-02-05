@@ -1,0 +1,98 @@
+.cinema-button {
+    background: grey;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.date-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-left:100px;
+   
+}
+
+.buttondate {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right:110px;
+    gap: 20px;
+}
+
+.movie {
+    display: flex;
+    align-items: center;
+    background: grey;
+    padding: 15px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.movie img {
+    width: 80px;
+    height: 120px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.showtimes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Prevents stretching if there are too many items */
+    justify-content: flex-start; /* Aligns showtimes neatly */
+}
+
+.showtime {
+    background: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px; /* Ensures consistent text size */
+    min-width: 70px; /* Set a minimum width */
+    text-align: center; /* Center text inside the box */
+
+}
+#cinemaImage {
+    width: 200px; /* Adjust the width */
+    margin-top: 10px;
+    height: 133px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Space between image and buttons */
+    margin-left: 280px; 
+    font-family: Arial, sans-serif;
+}
+#date-selector {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid wheat(70, 0, 70);
+    border-radius: 5px;
+    background-color: wheat(70, 0, 70);
+    color: black;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#date-selector:hover, #date-selector:focus {
+    border-color: wheat; /* Highlight border on hover/focus */
+}
