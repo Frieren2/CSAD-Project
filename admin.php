@@ -28,6 +28,7 @@
             include 'homepage.php';
         }
         ?>
-        <script src="javascript/script.js"></script>
+        <script src="javascript/addMovie.js"></script>
+        <script src="javascript/addShow.js"></script>
 </body>
 </html>
