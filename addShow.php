@@ -91,4 +91,35 @@ document.getElementById('cinemaSelect').addEventListener('change', updatePreview
 document.getElementById('date-selector').addEventListener('input', updatePreview);
 document.getElementById('screenselect').addEventListener('change', updatePreview);
 document.getElementById('timeselect').addEventListener('change', updatePreview);
+
+function validateForm(){
+    var movie = document.getElementById('movieSelect').value.trim();
+    var cinema= document.getElementById('cinemaSelect').value.trim();
+    var date = document.getElementById('date-selector').value.trim();
+    var screen = document.getElementById('screenselect').value.trim();
+    var time = document.getElementById('timeselect').value.trim();
+    if(movie===""){
+        alert("Please select a movie");
+        return false;
+    }
+    else if(cinema===""){
+        alert("Please select a cinema");
+        return false;
+    }
+    else if(date===""){
+        alert("Please select a date");
+        return false;
+    }
+    else if(screen===""){
+        alert("Please select a screen");
+        return false;
+    }
+    else if(time===""){
+        alert("Please select a showtime");
+        return false;
+    }
+    else{
+        return true;
+    }
+}
 </script>

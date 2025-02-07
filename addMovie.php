@@ -54,11 +54,11 @@
 </div>
 <script>
     function validateForm() {
-        let banner = document.getElementById("banner").files.length;
-        let poster = document.getElementById("poster").files.length;
-        let name = document.getElementById("name").value.trim();
-        let desc = document.getElementById("desc").value.trim();
-        let genres = document.querySelectorAll('input[name="genre[]"]:checked');
+        var banner = document.getElementById("banner").files.length; //checks if file has been uploaded
+        var poster = document.getElementById("poster").files.length; //checks if file has been uploaded
+        var name = document.getElementById("name").value.trim(); 
+        var desc = document.getElementById("desc").value.trim();
+        var genres = document.querySelectorAll('input[name="genre[]"]:checked');
 
         if (banner === 0) {
             alert("Please upload a movie banner.");

@@ -20,7 +20,7 @@
                 <td>
                     <?php if (!empty($row['poster'])): ?>
                         <img src="data:image/jpeg;base64,<?php echo base64_encode($row['poster']); ?>" 
-                             alt="Movie Poster" width="100" height="100">
+                             alt="Movie Poster" style="width: 100px; height: auto; object-fit: contain;">
                     <?php else: ?>
                         No Image
                     <?php endif; ?>

@@ -162,7 +162,7 @@ input[type="checkbox"]:checked+label::before{
     top:0;
     width: 18px;
     height: 18px;   
-    outline:2px solid limegreen;
+    outline:2px solid #4189e0;
     background:white;
 }
 input[type="checkbox"]:checked+label::after{
@@ -172,7 +172,7 @@ input[type="checkbox"]:checked+label::after{
     top:0;
     width: 18px;
     height: 18px;
-    background-image: url(../resources/check.png);
+    background-image: url(../resources/blue.png);
     background-size: contain;
     transition: all .5s ease;
     opacity: 1;
@@ -185,7 +185,7 @@ input[type="checkbox"]:not(:checked)+label::after{
     top:0;
     width: 18px;
     height: 18px;
-    background-image: url(../resources/check.png);
+    background-image: url(../resources/blue.png);
     background-size: contain;
     opacity: 0;
     transform: scale(0);
