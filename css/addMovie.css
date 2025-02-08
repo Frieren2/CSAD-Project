@@ -69,7 +69,6 @@
 input[type="radio"]{
     display: none;
 }
-
 .rating {
     height: 1em;
     position: relative;
@@ -129,7 +128,6 @@ input[type="radio"]{
     color: #fff;
   }
 .form {
-    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
