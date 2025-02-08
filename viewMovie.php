@@ -28,7 +28,7 @@
                 <td><?php echo $row['genre']; ?></td>
                 <td><?php echo $row['rating']; ?></td>
                 <td>
-                    <a href="editMovie.php?id=<?php echo $row['id']; ?>">
+                <a href="admin.php?page=editMovie&id=<?php echo $row['id']; ?>">
                         <button style="background: transparent;border: none;"><img src="resources/edit.png"  class = "edit"></button>
                     </a>
                 </td>
