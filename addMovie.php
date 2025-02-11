@@ -1,16 +1,16 @@
 <div>
-<form class="form" method="post" action="movies.php" enctype="multipart/form-data" onsubmit="return validateForm()">
+<form class="form" method="post" action="movies.php" enctype="multipart/form-data" onsubmit="return validateForm()"> <!--enctype="multipart/form-data" is used for encoding the file input data -->
 <h1>Add Movie:</h1>
     <div>
         <label for="banner" class="banner-style" id="banner-style">
-            <img src="resources/cloud-upload.png" width="50" id="preview-banner" alt="Upload Preview">
+            <img src="resources/cloud-upload.png" width="50" id="preview-banner">
             <p>Upload Movie Banner</p>
         </label>
         <input type="file" id="banner" name="banner" accept="image/png, image/jpg">
     </div>
     <div style="margin-top:20px">
         <label for="poster" class="poster-style" id="poster-style">
-            <img src="resources/cloud-upload.png" width="50" id="preview-poster" alt="Upload Preview">
+            <img src="resources/cloud-upload.png" width="50" id="preview-poster">
             <p>Upload Movie Poster</p>
         </label>
         <input type="file" id="poster" accept="image/png, image/jpg" name="poster">
@@ -36,7 +36,7 @@
         <label for="R21" class="rating">R21</label>
     </div>
     <div style="margin-top:20px; display: flex; align-items: center;">Genre:
-        <input type="checkbox" name="genre[]" id="horror" value="Horror">
+        <input type="checkbox" name="genre[]" id="horror" value="Horror">  <!--name = genre[] is used to all values as array and submitted -->
         <label for="horror">Horror</label>
         <input type="checkbox" name="genre[]" id="action" value="Action">
         <label for="action">Action</label>
@@ -44,7 +44,7 @@
         <label for="drama">Drama</label>
         <input type="checkbox" name="genre[]" id="comedy" value="Comedy">
         <label for="comedy">Comedy</label>
-        <input type="checkbox" name="genre[]" id="romance" value="Romance">
+        <input type="checkbox" name="genre[]" id="romance" value="Romance">  
         <label for="romance">Romance</label>
     </div>
     <div>

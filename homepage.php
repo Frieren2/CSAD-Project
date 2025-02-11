@@ -38,11 +38,11 @@
     <div class="headers" id="available-screens"></div>
 </div>
 <script>
-const availableScreens = {
-    "Cathay Cineplexes (West Mall)": {
-        [formatDate(new Date())]: ["Screen 1", "Screen 2", "Screen 3"],
-        [formatDate(new Date(new Date().setDate(new Date().getDate() + 1)))]: ["Screen 1", "Screen 4"]
-    },
+var availableScreens = {
+    "Cathay Cineplexes (West Mall)": { //Each cinema contains object where keys are formatted dates(From function formatDates) and values are screens 
+        [formatDate(new Date())]: ["Screen 1", "Screen 2", "Screen 3"],  //Set todays date
+        [formatDate(new Date(new Date().setDate(new Date().getDate() + 1)))]: ["Screen 1", "Screen 4"] //Set tomorrow's date
+    }, //From https://www.freecodecamp.org/news/javascript-object-keys-tutorial-how-to-use-a-js-key-value-pair/
     "Cathay Cineplexes (Jem)": {
         [formatDate(new Date())]: ["Screen 5", "Screen 6"],
         [formatDate(new Date(new Date().setDate(new Date().getDate() + 1)))]: ["Screen 5", "Screen 7"]
@@ -61,19 +61,24 @@ const availableScreens = {
     }
 };
 function updateScreens() {
-    const selectedCinema = document.getElementById("cinemaSelect").value;
-    const screenContainer = document.getElementById("available-screens");
-    screenContainer.innerHTML=""; // Reset previous screens
+    var selectedCinema = document.getElementById("cinemaSelect").value;
+    var screenContainer = document.getElementById("available-screens");
+    screenContainer.innerHTML=""; // Reset previous screens is needed or overflow will occur
 
-    const screens = availableScreens[selectedCinema]?.[dates[currentDateIndex]] || ["No screens available"];
-
+    var screens = availableScreens[selectedCinema]?.[dates[currentDateIndex]] || ["No screens available"];
+    // availableScreens[selectedCinema] Gets the object containing screen data for the selected cinema.
+    //?.[dates[currentDateIndex]] Uses optional chaining (?.) to check if screens exist for the selected date.
+    /*So for optional chaining it will check if the selectedCinema exists, if it does not it will return undefined
+    if it does it will go on to check for dates If screens exist, it returns an array of screens if no screens exists it will return ["No screens available"];
+    learnt from video https://www.youtube.com/watch?v=yHZ_hfbGCN8
+    */
     screens.forEach(screen => {
-        const screenElement = document.createElement("p");
-        screenElement.textContent = screen;
-        screenContainer.appendChild(screenElement);
+        var screenElement = document.createElement("p"); //for each screen it creates a new <p>
+        screenElement.innerHTML = screen;              //Sets the text content of the <p> element to the current screen value
+        screenContainer.appendChild(screenElement);   //making it visible in the UI Used GPT
     });
 }
-    function changeImage() {
+unction changeImage() {
             var select = document.getElementById("cinemaSelect");
             var image = document.getElementById("cinemaImage");
 
@@ -84,26 +89,23 @@ function updateScreens() {
                 "Golden Village (Plaza)": "resources/plaza.jpeg",
                 "Golden Village (Jurong Point)": "resources/jurong.jpeg"
             };
-
-            var selectedCinema = select.value;
-            image.src = images[selectedCinema];
+            var selectedCinema = select.value;  //retrieves the currently selected cinema.
+            image.src = images[selectedCinema]; //sets the src of img to image of the selectedCinema
             updateScreens(); 
         }
 function formatDate(date) {
-    const options = { month: 'short', day: '2-digit', year: 'numeric' };
+    var options = { month: 'short', day: '2-digit', year: 'numeric' };
     return date.toLocaleDateString('en-US', options);
-}
+} //Learnt from https://stackoverflow.com/questions/3552461/how-do-i-format-a-date-in-javascript
 
 function generateDates() {
-    const dates = [];
-    const startDate = new Date(); // Starting point
-    const endDate = new Date("2025-12-31");
-
-    let currentDate = new Date(startDate); // Create a fresh instance
-
+    var dates = [];
+    var startDate = new Date(); // Starting point
+    var endDate = new Date("2025-12-31");
+    var currentDate = new Date(startDate); // Create a fresh instance
     while (currentDate <= endDate) {
         dates.push(formatDate(currentDate)); // Use formatDate here
-        currentDate.setDate(currentDate.getDate() + 1);
+        currentDate.setDate(currentDate.getDate() + 1); //From gpt
     }
 
     return dates;
@@ -111,24 +113,22 @@ function generateDates() {
 
 // Automatically remove past dates on page load
 function removePastDates() {
-    const todayFormatted = formatDate(new Date());
-    dates = dates.filter(date => new Date(date) >= new Date(todayFormatted));
-}
+    var todayFormatted = formatDate(new Date());
+    dates = dates.filter(date => new Date(date) >= new Date(todayFormatted)); 
+}//each date from dates is filtered so only showing today or after
 
 // Initialize dates
-let dates = generateDates();
+var dates = generateDates();
 removePastDates(); // Remove old dates
-let currentDateIndex = 0;
+var currentDateIndex = 0;
 
 // DOM elements
-const selectedDate = document.getElementById("selected-date");
-const movieList = document.getElementById("movie-list");
-
+var selectedDate = document.getElementById("selected-date");
+var movieList = document.getElementById("movie-list");
 // Set initial date display
 selectedDate.textContent = dates[currentDateIndex];
-
 // Movie schedule database (dynamic)
-const movieSchedules = {
+var movieSchedules = {
     [formatDate(new Date())]: [
         { title: "Baby Hero (M)", duration: "1 hr 45 mins", rating: "PG13", img: "resources/movie-poster.png", times: ["11:40 PM"] },
         { title: "Better Man", duration: "2 hr 15 mins", rating: "M18", img: "resources/movie-poster.png", times: ["12:10 AM"] }
@@ -137,19 +137,19 @@ const movieSchedules = {
         { title: "Baby Hero (M)", duration: "1 hr 45 mins", rating: "PG13", img: "resources/movie-poster.png", times: ["11:20 AM", "1:45 PM", "4:25 PM", "6:50 PM", "9:35 PM", "11:59 PM"] },
         { title: "The Prosecutor (M)", duration: "1 hr 57 mins", rating: "NC16", img: "resources/movie-poster.png", times: ["4:10 PM", "9:15 PM", "11:55 PM"] }
     ]
-};
+}; //Same as above key = date values = title duration rating img and times
 
 // Function to update movie list
 function updateMovies() {
-    movieList.innerHTML = "";
-    const movies = movieSchedules[dates[currentDateIndex]] || [];
+    movieList.innerHTML = ""; //clear previous movies
+    var movies = movieSchedules[dates[currentDateIndex]] || [];
 
-    movies.forEach(movie => {
-        const movieDiv = document.createElement("div");
-        movieDiv.classList.add("movie");
+    movies.forEach(movie => {       //foreach movie loop through 
+        var movieDiv = document.createElement("div"); //Creates a new <div> element using document.createElement("div").
+        movieDiv.classList.add("movie"); //Adds a CSS class "movie" using classList.add("movie") for styling.
 
         movieDiv.innerHTML = `
-            <img src="${movie.img}" alt="${movie.title}">
+            <img src="${movie.img}">
             <div>
                 <h3>${movie.title}</h3>
                 <p>${movie.rating} | ${movie.duration}</p>

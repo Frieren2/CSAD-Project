@@ -1,23 +1,28 @@
-const today = new Date();
-const formattedDate = today.toISOString().split('T')[0];
+var today = new Date();
+var formattedDate = today.toISOString().split('T')[0];
 document.getElementById('date-selector').value = formattedDate;
 function updatePreview() {
-    document.getElementById('preview-movie').innerText = document.getElementById('movieSelect').value || "Not selected";
-    document.getElementById('preview-cinema').innerText = document.getElementById('cinemaSelect').value || "Not selected";
-    document.getElementById('preview-date').innerText = document.getElementById('date-selector').value || "Not selected";
-    document.getElementById('preview-screen').innerText = document.getElementById('screenselect').value || "Not selected";
-    document.getElementById('preview-showtime').innerText = document.getElementById('timeselect').value || "Not selected";
+    var movieSelect = document.getElementById('movieSelect').value || "Not selected";   //get value of all select options if select is blank display Not selected
+    var cinemaSelect = document.getElementById('cinemaSelect').value || "Not selected";
+    var dateSelect = document.getElementById('date-selector').value || "Not selected";
+    var screenselect = document.getElementById('screenselect').value || "Not selected";
+    var timeselect = document.getElementById('timeselect').value || "Not selected";
+    document.getElementById('preview-movie').innerText = movieSelect;
+    document.getElementById('preview-cinema').innerText = cinemaSelect;
+    document.getElementById('preview-date').innerText = dateSelect;
+    document.getElementById('preview-screen').innerText = screenselect;
+    document.getElementById('preview-showtime').innerText = timeselect;
 }
 
 // Add event listeners to form fields
-document.getElementById('movieSelect').addEventListener('change', updatePreview);
+document.getElementById('movieSelect').addEventListener('change', updatePreview);  //When the option changes it will call function updatePreview
 document.getElementById('cinemaSelect').addEventListener('change', updatePreview);
-document.getElementById('date-selector').addEventListener('input', updatePreview);
+document.getElementById('date-selector').addEventListener('change', updatePreview);
 document.getElementById('screenselect').addEventListener('change', updatePreview);
 document.getElementById('timeselect').addEventListener('change', updatePreview);
 
 function validateForm(){
-    var movie = document.getElementById('movieSelect').value.trim();
+    var movie = document.getElementById('movieSelect').value.trim(); //Validating form 
     var cinema= document.getElementById('cinemaSelect').value.trim();
     var date = document.getElementById('date-selector').value.trim();
     var screen = document.getElementById('screenselect').value.trim();

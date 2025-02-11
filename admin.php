@@ -15,9 +15,9 @@
 <?php include 'sidebar.php';?>
 <?php
         // Determine which page to display based on the "page" query parameter
-        if (isset($_GET['page'])) { //if ?page=x isset
+        if (isset($_GET['page'])) { //if ?page=x isset where x is pagename
             $page = $_GET['page']; //get the page 
-            $validPages = ['homepage', 'addMovie', 'viewMovie','addShow','editMovie','booking','viewShow','logout']; //valid pages on the sidebar
+            $validPages = ['homepage', 'addMovie', 'viewMovie','addShow','editMovie','deleteMovie','booking','viewShow','logout']; //valid pages on the sidebar
             if (in_array($page, $validPages)) {
                 include "$page.php"; //$page.php stands for the validPages.php essentially  
             } else {

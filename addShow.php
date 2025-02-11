@@ -64,11 +64,11 @@ $results = $conn->query($sql);
     <div class="preview-section">
         <h2>Show Preview:</h2>
         <div class="preview-box">
-            <p><strong>Movie:</strong> <span id="preview-movie">Not selected</span></p>
-            <p><strong>Cinema:</strong> <span id="preview-cinema">Not selected</span></p>
-            <p><strong>Date:</strong> <span id="preview-date">Not selected</span></p>
-            <p><strong>Screen:</strong> <span id="preview-screen">Not selected</span></p>
-            <p><strong>Showtime:</strong> <span id="preview-showtime">Not selected</span></p>
+            <p><span style="font-weight: bold;">Movie: </span><span id="preview-movie">Not selected</span></p>
+            <p><span style="font-weight: bold;">Cinema: </span> <span id="preview-cinema">Not selected</span></p>
+            <p><span style="font-weight: bold;">Date: </span> <span id="preview-date">Not selected</span></p>
+            <p><span style="font-weight: bold;">Screen: </span><span id="preview-screen">Not selected</span></p>
+            <p><span style="font-weight: bold;">Showtime: </span> <span id="preview-showtime">Not selected</span></p>
         </div>
     </div>
 </div>

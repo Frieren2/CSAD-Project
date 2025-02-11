@@ -1,5 +1,5 @@
 <?php
-$cinema = $_POST['cinema'] ;
+$cinema = $_POST['cinema'] ; //receiving the cinema, lat and lng
 $userLat = $_POST['lat'];
 $userLng = $_POST['lng'];
 $mapEmbedUrl = null;
@@ -34,7 +34,7 @@ if (isset($userLat) && isset($userLng)) {
 
 if (isset($cinemaLat) && isset($cinemaLng)) {
     $mapEmbedUrl = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyAWjkJxkFP4Zq1bRHlM4XBxgyTb34PNr8g&origin={$userLat},{$userLng}&destination={$cinemaLat},{$cinemaLng}";
-} else {
+} else { //to use Maps Embed API overview go to documentation 
     $error = "Invalid input or location data is missing.";
 }
 ?>

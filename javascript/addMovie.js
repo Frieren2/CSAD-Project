@@ -1,23 +1,23 @@
 // Handle the banner file upload
-document.getElementById('banner').addEventListener('change', function (event) {
-    const file = event.target.files[0];
+document.getElementById('banner').addEventListener('change', function (event) { //runs the event when file is uploaded(change)
+    var file = event.target.files[0]; //contains list of files uploaded by user [0] is for the first file
     if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            const preview = document.getElementById('preview-banner');
-            preview.src = e.target.result;
+        var reader = new FileReader(); //FileReader() is built in js 
+        reader.onload = function () {  //When the file has been loaded it will run function 
+            var preview = document.getElementById('preview-banner');
+            preview.src = reader.result; //Got from stackoverflow https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
         };
         reader.readAsDataURL(file);
     }
 });
 // Handle the poster file upload
 document.getElementById('poster').addEventListener('change', function (event) {
-    const file = event.target.files[0];
+    var file = event.target.files[0];
     if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            const preview = document.getElementById('preview-poster');
-            preview.src = e.target.result;
+        var reader = new FileReader();
+        reader.onload = function () {
+            var preview = document.getElementById('preview-poster');
+            preview.src = reader.result;
         };
         reader.readAsDataURL(file);
     }

@@ -26,8 +26,8 @@
         function submitLocation(cinema) {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function getPosition(position) { //the function has to be declared in the input parameter as we need to submit the lat and lon of user  
-                    const userLat = position.coords.latitude;
-                    const userLng = position.coords.longitude;
+                    const userLat = position.coords.latitude; //position is input from getCurrentPosition
+                    const userLng = position.coords.longitude; //getting user lat and lng
                     // Populate form fields
                     document.getElementById('cinema').value = cinema;
                     document.getElementById('lat').value = userLat;

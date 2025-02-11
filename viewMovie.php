@@ -11,6 +11,7 @@
             <th>Genre</th>
             <th>Rating</th>
             <th>Edit</th>
+            <th>Delete</th>
         </tr>
         <?php while ($row = mysqli_fetch_assoc($result)): ?>
             <tr>
@@ -30,6 +31,11 @@
                 <td>
                 <a href="admin.php?page=editMovie&id=<?php echo $row['id']; ?>">
                         <button style="background: transparent;border: none;"><img src="resources/edit.png"  class = "edit"></button>
+                    </a>
+                </td>
+                <td>
+                <a href="admin.php?page=deleteMovie&id=<?php echo $row['id']; ?>">
+                        <button style="background: transparent;border: none;"><img src="resources/delete.png"  class = "edit"></button>
                     </a>
                 </td>
             </tr>

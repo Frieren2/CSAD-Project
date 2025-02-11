@@ -11,12 +11,12 @@
             <th>Seat Number</th>
         </tr>
         <tr>
-            <td>1</td>
+            <td>1</td>      <!--All placeholder values for actual table-->
             <td>2</td>
             <td>3</td>
             <td>4</td>
             <td>5</td>
-            <td>6</td>
+            
         </tr>
         <tr>
             <td>1</td>
@@ -24,7 +24,7 @@
             <td>3</td>
             <td>4</td>
             <td>5</td>
-            <td>6</td>
+            
         </tr>
         <tr>
             <td>1</td>
@@ -32,7 +32,7 @@
             <td>3</td>
             <td>4</td>
             <td>5</td>
-            <td>6</td>
+            
         </tr>
     </table>
     </div>
